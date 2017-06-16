@@ -15,6 +15,7 @@ class StoreController extends \BaseController {
 	public function index()
 	{
 		$products = Product::all();
+		dd($products);
 	    //return "hola mundo";
 		//return Redirect::to('views/store/index.blade.php');
 		return View::make('store.index', compact('products'));
@@ -43,24 +44,6 @@ class StoreController extends \BaseController {
 
 	}
 
-/*
-	public function insert( Request $req)
-	{	
-
-		$titulo = $req->input('Titulo', 'null');
-		$price = $req->input('Price', 'null');
-		$categoria = $req->input('select', 'null');
-		$descripcion = $req->input('descripcion', 'null');
-		$image = $req->input('image', 'null');
-		$data = array('titulo'=>$firstName, 'price'=>$price, 'categoria'=>$categoria, 'descripcion'=>$descripcion);
-		dd($data);
-		DB::table('Products')->insert(array('data'=>$fileName));
-		//DB::table('Products')->insert($data);
-
-		echo "Exitoso";
-		return Redirect::back();
-	}
-*/
 
 	public function insert()
 	{		
@@ -69,10 +52,11 @@ class StoreController extends \BaseController {
 			'price'=>Input::get('Price'),
 			'categoria'=>(string)Input::get('select'),
 			'descripcion'=>(string)Input::get('Descripcion'),
-			'image'=>(string)Input::get('image')
+			'image'=>(string)Input::get('image'),
+			'slug'=>(string)Input::get('Slug'),
 			));
 		$product->save();
-		echo "Fue exito la insercion";
+		return Redirect::action('StoreController@index');
 		//return View::make('store.index');
 	}
 

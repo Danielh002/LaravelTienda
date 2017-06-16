@@ -28,6 +28,10 @@
 				<td> Price: </td>
 				<td><input type="text" name="Price"></td>
 			</tr>
+			<tr>
+				<td> Slug: </td>
+				<td><input type="text" name="Slug"></td>
+			</tr>
 			<td> Genero: </td>
 			<td>
 			<select name="select">

@@ -12,8 +12,9 @@
 				<p> {{ $product->descripcion }}</p>
 				<p> Precio : ${{ number_format($product->precio,2) }} </p>
 				<p>
-					<a class="btn btn-warning" href="{{ route('product-detail', $product->slug ) }}"> <i class="fa fa-cartplus"></i>Eliminar</a>
 					<a class="btn btn-primary" href="{{ route('product-edit', $product->slug ) }}"> <i class="fa fa-chevron-circle-right"></i>Modificar</a>
+					<a class="btn btn-warning" href="{{ route('product-detail', $product->slug ) }}"> <i class="fa fa-cartplus"></i>Eliminar</a>
+
 				</p>
 			</div>
 		</div>
