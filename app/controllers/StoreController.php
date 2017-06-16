@@ -15,7 +15,6 @@ class StoreController extends \BaseController {
 	public function index()
 	{
 		$products = Product::all();
-		dd($products);
 	    //return "hola mundo";
 		//return Redirect::to('views/store/index.blade.php');
 		return View::make('store.index', compact('products'));
