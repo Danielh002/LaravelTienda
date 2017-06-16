@@ -42,9 +42,11 @@ class StoreController extends \BaseController {
 	{
 
 	}
+
 /*
 	public function insert( Request $req)
-	{
+	{	
+
 		$titulo = $req->input('Titulo', 'null');
 		$price = $req->input('Price', 'null');
 		$categoria = $req->input('select', 'null');
@@ -61,14 +63,16 @@ class StoreController extends \BaseController {
 */
 
 	public function insert()
-	{
-		Product::create(array(
+	{	
+		$product = Product::create(array(
 			'titulo'=>Input::get('Titulo'),
 			'price'=>Input::get('Price'),
 			'categoria'=>Input::get('select'),
 			'descripcion'=>Input::get('descripcion'),
 			'image'=>Input::get('image')
 			));
+		$product->save();
+		echo "Exitoso";
 
 	}
 
