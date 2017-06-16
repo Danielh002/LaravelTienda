@@ -24,7 +24,19 @@ Route::get('/crear', function(){
 
 Route::post('/insert', 'StoreController@insert');
 
+
+Route::post('update-product/{slug}', [
+	'as' => 'product-update',
+	'uses' => 'StoreController@update'
+]);
+
+
 Route::get('product/{slug}', [
 	'as' => 'product-detail',
 	'uses' => 'StoreController@destroy'
+]);
+
+Route::get('edit-product/{slug}', [
+	'as' => 'product-edit',
+	'uses' => 'StoreController@edit'
 ]);

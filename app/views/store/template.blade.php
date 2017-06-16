@@ -12,6 +12,6 @@
 	@include('store.partials.footer')
 	<script src="https://ajax.googleapis.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min.js"></script>
 	<script type="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="{{ asset('js/pinterest_grid') }}"></script>
+	<script type="{{ asset('js/pinterest_grid.js') }}"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Inserte un producto </title>
+	<title> Modificando un producto </title>
 	<script LANGUAGE="JavaScript"> function salta(Sel){ if (Sel.categoria.selectedIndex != 0){ document.location=Sel.categoria.options[Sel.categoria.selectedIndex].value }}
 	</script>
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" rel="stylesheet">
@@ -17,8 +17,8 @@
 </head>
 <body>
 	@include('store.partials.nav')
-	<h2 class="titulo"> Agregar Producto </h2>
-	<<form action="./insert" method="post">
+	<h2 class="titulo"> Modificar Producto </h2>
+	<<form action="{{ route('product-update', $product->slug ) }}" method="post">
 		<table align="center" >
 			<tr>
 				<td> Titulo: </td>
@@ -48,7 +48,7 @@
 			<tr>
 				<td><
 				<div class="form-group">
-						<input id="idButom" type="submit" name="submit" value="Agregar Producto">
+						<input id="idButom" type="submit" name="submit" value="Modificar Producto">
 				</div>
 				</td>
 			</tr>

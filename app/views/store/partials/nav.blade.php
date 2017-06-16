@@ -14,7 +14,6 @@
       <p class="navbar-text"> My Laravel Store</p>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="crear">Crear</a></li>
-        <li><a href="#">Modificar</a></li>
       </ul>
     </div>
   </div>

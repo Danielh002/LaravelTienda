@@ -94,11 +94,12 @@ class StoreController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-		//
+		$product = Product::where('slug',$slug)->first();
+		return View::make('store.modificarProducto', compact('product'));
+//
 	}
-
 
 	/**
 	 * Update the specified resource in storage.
@@ -106,9 +107,32 @@ class StoreController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug)
 	{
-		//
+		$product = Product::where('slug',$slug)->first();
+
+		$tituloRecibido = Input::get('Titulo');
+		$precioRecibido = Input::get('Price');
+		$categoriaRecibida = Input::get('select');
+		$descripcionRecibida = Input::get('Descripcion');
+		$url_imagenRecibida = Input::get('image');
+		if ( strcmp ($tituloRecibido, "")){
+			$product->titulo = $tituloRecibido;
+		}
+		if ( strcmp ($precioRecibido, "")){
+			$product->price = $precioRecibido;
+		}
+		if ( strcmp ($categoriaRecibida, "")){
+			$product->categoria = $categoriaRecibida;
+		}
+		if ( strcmp ($descripcionRecibida, "")){
+			$product->descripcion = $descripcionRecibida;
+		}
+		if ( strcmp ($url_imagenRecibida, "")){
+			$product->image = $url_imagenRecibida;
+		}		
+		$product->save();
+		return Redirect::action('StoreController@index');
 	}
 
 
