@@ -2,25 +2,22 @@
 @extends('store.template')
 
 @section('content')
-
-
-{{-- {{{ isset($products) ? $products : 'Default' }}} --}}
-	
-	<div class="products">
+<div class="container text-center"> 
+	<div id="products">
 		@foreach($products as $product)
-
-		<div class="product">
-			<h3>{{ $product->titulo }}</h3>	
-			<img src = "{{ $product->image }}" width="250">
-			<div class="product-info">
+		<div class="product white-panel">
+			<h3>{{ $product->titulo }}</h3><hr>
+			<img src = "{{ $product->image }}" width="200">
+			<div class="product-info panel">
 				<p> {{ $product->descripcion }}</p>
 				<p> Precio : ${{ number_format($product->precio,2) }} </p>
 				<p>
-					<a href="#">Comprar</a>
-				</p>
+					<a class="btn btn-warning" href="{{ route('product-detail', $product->slug ) }}"> <i class="fa fa-cartplus"></i>Eliminar</a>
+				</p>|
 			</div>
 		</div>
 		
 	@endforeach
 	</div>
+</div>
 @stop

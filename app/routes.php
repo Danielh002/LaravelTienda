@@ -23,3 +23,8 @@ Route::get('/crear', function(){
 });
 
 Route::post('/insert', 'StoreController@insert');
+
+Route::get('product/{slug}', [
+	'as' => 'product-detail',
+	'uses' => 'StoreController@destroy'
+]);

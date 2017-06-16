@@ -15,7 +15,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="crear">Crear</a></li>
         <li><a href="#">Modificar</a></li>
-        <li><a href="#">Eliminar</a></li>
       </ul>
     </div>
   </div>

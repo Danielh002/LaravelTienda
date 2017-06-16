@@ -63,17 +63,17 @@ class StoreController extends \BaseController {
 */
 
 	public function insert()
-	{	
+	{		
 		$product = Product::create(array(
-			'titulo'=>Input::get('Titulo'),
+			'titulo'=>(string)Input::get('Titulo'),
 			'price'=>Input::get('Price'),
-			'categoria'=>Input::get('select'),
-			'descripcion'=>Input::get('descripcion'),
-			'image'=>Input::get('image')
+			'categoria'=>(string)Input::get('select'),
+			'descripcion'=>(string)Input::get('Descripcion'),
+			'image'=>(string)Input::get('image')
 			));
 		$product->save();
-		echo "Exitoso";
-
+		echo "Fue exito la insercion";
+		//return View::make('store.index');
 	}
 
 	/**
@@ -118,9 +118,12 @@ class StoreController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($slug)
 	{
-		//
+		$product = Product::where('slug',$slug)->first();
+		$product->delete();
+		return Redirect::back();
+
 	}
 
 

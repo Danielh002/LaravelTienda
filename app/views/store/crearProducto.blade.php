@@ -21,7 +21,7 @@
 <body>
 	@include('store.partials.nav')
 	<h2 class="titulo"> Agregar Producto </h2>
-	<<form action="/insert" method="post">
+	<<form action="./insert" method="post">
 		<table align="center" >
 			<tr>
 				<td> Titulo: </td>
@@ -34,7 +34,7 @@
 			<td> Genero: </td>
 			<td>
 			<select name="select">
-  			<option value="camisas" selected="selected"> Camisas </option>
+  			<option value="camisas"> Camisas </option>
   			<option value="zapatos"> Zapatos </option> 
   			<option value="accesorios"> Accesorios </option>
   			<option value="Pantalones"> Pantalones  </option>
